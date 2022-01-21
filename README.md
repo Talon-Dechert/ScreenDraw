@@ -17,6 +17,7 @@ Round 1
 -Create button atop page to clear grid and prompt for size of new grid
     -All grids ought to maintain same total grid size
     -Max 100x100 grids
+    -Popup input form in modal
 ----------------------
 
 Round 2
