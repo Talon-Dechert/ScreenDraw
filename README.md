@@ -18,7 +18,7 @@ Round 1
     -All grids ought to maintain same total grid size
     -Max 100x100 grids
     -Popup input form in modal
-----------------------
+
 
 Round 2
 -------------------------
@@ -26,7 +26,7 @@ Round 2
 
 -Set the color on each pass to random RGB value
 -Each successive pass adds 10% towards black
--------------------------
+
 
 
 !!!Separate all functions in JS!
