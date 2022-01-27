@@ -41,7 +41,7 @@ function generateSquares(numOfSquares){
 
 //Logic for square size
 function determineSquareSize(numOfSquares){
-    let size = (800/numOfSquares);
+    let size = (600/numOfSquares);
     return(size);
 }
 
