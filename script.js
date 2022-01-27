@@ -53,9 +53,15 @@ function colorOnHover(e){
 
 //Outermost scope, where eventListeners live
 function mainGame(){
+    generateSquares(16);
 
+    const newButton = document.querySelector('.newGame');
+    const clearButton = document.querySelector('.clearBoard');
+
+    newButton.addEventListener('click', newGame);
+    clearButton.addEventListener('click', clearGame);
 }
 
-generateSquares(16);
+mainGame();
 
 // module.exports = determineSquareSize;
