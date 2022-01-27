@@ -33,6 +33,7 @@ function generateSquares(numOfSquares){
             colorSquare.setAttribute('style', `height: ${height}; width: ${width}`);
             sketchPad.appendChild(colorSquare);
             squareArray.push(colorSquare);
+            colorSquare.addEventListener('mouseenter', colorOnHover);
         }
     }
 
@@ -51,6 +52,6 @@ function colorOnHover(e){
 }
 
 
-// generateSquares(16);
+generateSquares(16);
 
 // module.exports = determineSquareSize;
