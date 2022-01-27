@@ -1,7 +1,8 @@
 
-// Create new board
+// Create new board -- main game
 function newGame(){
-    
+    generateSquares(promptForNewSquares());
+
 }
 
 // Clear previous board instance
@@ -22,7 +23,7 @@ function generateSquares(numOfSquares){
     let height = `${(determineSquareSize(numOfSquares) - 2)}px`;
     let width = `${(determineSquareSize(numOfSquares)- 2)}px`;
 
-    // let squareArray = [];
+    let squareArray = [];
     
     for (y = 1; y <= numOfSquares; y++){
         for (x = 1; x <= numOfSquares; x++){
@@ -31,10 +32,11 @@ function generateSquares(numOfSquares){
             colorSquare.classList.add('colorSquare');
             colorSquare.setAttribute('style', `height: ${height}; width: ${width}`);
             sketchPad.appendChild(colorSquare);
+            squareArray.push(colorSquare);
         }
     }
 
-    return;
+    return(squareArray);
 }
 
 //Logic for square size
@@ -43,17 +45,12 @@ function determineSquareSize(numOfSquares){
     return(size);
 }
 
-// Logic for generating color
+// Logic for determining color in eventListeners
 function colorOnHover(){
     
 }
 
 
-// Main game, assigns all eventListeners
-function sketchGame(numOfSquares){
-    generateSquares(numOfSquares);
-}
-
-// generateSquares(100);
+// generateSquares(16);
 
 // module.exports = determineSquareSize;
