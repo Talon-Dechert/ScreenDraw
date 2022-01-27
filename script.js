@@ -1,5 +1,5 @@
 
-// Create new board -- main game
+// Create new board
 function newGame(){
     generateSquares(promptForNewSquares());
 
@@ -51,6 +51,10 @@ function colorOnHover(e){
     e.currentTarget.classList.add('scratched');
 }
 
+//Outermost scope, where eventListeners live
+function mainGame(){
+
+}
 
 generateSquares(16);
 
