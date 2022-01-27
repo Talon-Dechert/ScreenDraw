@@ -1,13 +1,29 @@
+//Outermost scope, where eventListeners live
+function mainGame(){
+
+    generateSquares(16);
+
+    
+    
+    const newButton = document.querySelector('.newGame');
+    const clearButton = document.querySelector('.clearBoard');
+    
+    newButton.addEventListener('click', newGame);
+    clearButton.addEventListener('click', clearGame);
+    
+}
 
 // Create new board
 function newGame(){
+    clearGame();
     generateSquares(promptForNewSquares());
-
+    
 }
 
 // Clear previous board instance
 function clearGame(){
-    
+    let squareNodeList = document.querySelectorAll('.colorSquare');
+    squareNodeList.forEach(square => square.classList.remove('scratched'));
 }
 
 // Create prompt returns numOfSquares
@@ -23,7 +39,6 @@ function generateSquares(numOfSquares){
     let height = `${(determineSquareSize(numOfSquares) - 2)}px`;
     let width = `${(determineSquareSize(numOfSquares)- 2)}px`;
 
-    let squareArray = [];
     
     for (y = 1; y <= numOfSquares; y++){
         for (x = 1; x <= numOfSquares; x++){
@@ -32,12 +47,12 @@ function generateSquares(numOfSquares){
             colorSquare.classList.add('colorSquare');
             colorSquare.setAttribute('style', `height: ${height}; width: ${width}`);
             sketchPad.appendChild(colorSquare);
-            squareArray.push(colorSquare);
+            // squareArray.push(colorSquare);
             colorSquare.addEventListener('mouseenter', colorOnHover);
         }
     }
 
-    return(squareArray);
+    // return(squareArray);
 }
 
 //Logic for square size
@@ -51,16 +66,6 @@ function colorOnHover(e){
     e.currentTarget.classList.add('scratched');
 }
 
-//Outermost scope, where eventListeners live
-function mainGame(){
-    generateSquares(16);
-
-    const newButton = document.querySelector('.newGame');
-    const clearButton = document.querySelector('.clearBoard');
-
-    newButton.addEventListener('click', newGame);
-    clearButton.addEventListener('click', clearGame);
-}
 
 mainGame();
 
