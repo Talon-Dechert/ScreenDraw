@@ -32,6 +32,11 @@ body {
     margin: 2rem;
 }
 
+.sketchBox {
+    display: flex;
+    justify-content: center;
+}
+
 .sketchPad {
     width: 600px;
     height: 600px;
