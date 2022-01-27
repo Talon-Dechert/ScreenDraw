@@ -25,6 +25,13 @@ body {
 
 }
 
+.buttonArea {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+}
+
 .sketchPad {
     width: 800px;
     height: 800px;
@@ -32,6 +39,7 @@ body {
     flex-wrap: wrap;
     flex-shrink: 0;
     flex-grow: 0;
+    background-color: rgb(211, 176, 130);
 }
 
 .colorSquare {
