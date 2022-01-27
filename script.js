@@ -26,15 +26,23 @@ function clearGame(){
     squareNodeList.forEach(square => square.classList.remove('scratched'));
 }
 
+// Remove square nodes prior to new generation
+function removeSquares(){
+
+}
+
 // Create prompt returns numOfSquares
 function promptForNewSquares(){
-    
+    let numOfSquares = prompt("How many pixels?");
+    return numOfSquares;
 }
 
 // Logic for populating board with squares
 function generateSquares(numOfSquares){
 
     let sketchPad = document.querySelector('.sketchPad');
+
+    // sketchPad.removeChild
     
     let height = `${(determineSquareSize(numOfSquares) - 2)}px`;
     let width = `${(determineSquareSize(numOfSquares)- 2)}px`;
