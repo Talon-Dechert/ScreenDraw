@@ -1,3 +1,30 @@
+body {
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    background-color: rgb(211, 176, 130);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-start-end-radius: 10rem;
+    border-end-start-radius: 10rem;
+    border-start-start-radius: 5rem;
+    border-end-end-radius: 5rem;
+}
+
+.title {
+    margin: .7em;
+    color: rgb(245, 224, 224);
+    text-shadow:
+        0.05em 0 black,
+        0 0.05em black,
+        -0.05em 0 black,
+        0 -0.05em black;
+
+}
+
 .sketchPad {
     width: 800px;
     height: 800px;
