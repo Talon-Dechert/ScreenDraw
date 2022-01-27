@@ -11,14 +11,16 @@ function mainGame(){
     
     newButton.addEventListener('click', newGame);
     clearButton.addEventListener('click', clearGame);
+
     
     // Create new board
     function newGame(){
         clearGame();
+        removeSquares();
         generateSquares(promptForNewSquares());
         
     }
-
+    
     // Clear previous board instance
     function clearGame(){
         let squareNodeList = document.querySelectorAll('.colorSquare');
@@ -27,7 +29,8 @@ function mainGame(){
 
     // Remove square nodes prior to new generation
     function removeSquares(){
-        
+        let squareNodeList = document.querySelectorAll('.colorSquare');
+        squareNodeList.forEach(square => sketchPad.removeChild(square));
     }
 
     // Create prompt returns numOfSquares
