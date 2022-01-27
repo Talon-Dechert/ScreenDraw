@@ -46,8 +46,8 @@ function determineSquareSize(numOfSquares){
 }
 
 // Logic for determining color in eventListeners
-function colorOnHover(){
-    
+function colorOnHover(e){
+    e.currentTarget.classList.add('scratched');
 }
 
 
