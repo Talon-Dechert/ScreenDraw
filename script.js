@@ -80,5 +80,3 @@ function mainGame(){
 }
 
 mainGame();
-
-// module.exports = determineSquareSize;
