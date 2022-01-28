@@ -1,4 +1,3 @@
-//Outermost scope, where eventListeners live
 function mainGame(){
     const sketchPad = document.querySelector('.sketchPad');
     
@@ -13,7 +12,6 @@ function mainGame(){
     clearButton.addEventListener('click', clearGame);
 
     
-    // Create new board
     function newGame(){
         clearGame();
         removeSquares();
@@ -21,29 +19,36 @@ function mainGame(){
         
     }
     
-    // Clear previous board instance
     function clearGame(){
         let squareNodeList = document.querySelectorAll('.colorSquare');
         squareNodeList.forEach(square => square.classList.remove('scratched'));
     }
 
-    // Remove square nodes prior to new generation
     function removeSquares(){
         let squareNodeList = document.querySelectorAll('.colorSquare');
         squareNodeList.forEach(square => sketchPad.removeChild(square));
     }
 
-    // Create prompt returns numOfSquares
     function promptForNewSquares(){
-        let numOfSquares = prompt("How many pixels?");
-        return numOfSquares;
+        let numOfSquares = prompt("Enter the number of squares per side! \nMax is 100");
+        numOfSquares = parseInt(numOfSquares);
+        if (isNaN(numOfSquares)) {
+            alert("Please enter a number!");
+            return 16;
+        }else if (numOfSquares > 100){
+            alert("Uh oh! 100 is the max!");
+            return 100;
+        } else if (numOfSquares < 1){
+            alert("That's asking the impossible");
+            return 16;
+        } else {
+            return numOfSquares;
+        }
     }
 
-    // Logic for populating board with squares
     function generateSquares(numOfSquares){
         
         
-        // sketchPad.removeChild
         
         let height = `${(determineSquareSize(numOfSquares) - 2)}px`;
         let width = `${(determineSquareSize(numOfSquares)- 2)}px`;
@@ -56,21 +61,17 @@ function mainGame(){
                 colorSquare.classList.add('colorSquare');
                 colorSquare.setAttribute('style', `height: ${height}; width: ${width}`);
                 sketchPad.appendChild(colorSquare);
-                // squareArray.push(colorSquare);
                 colorSquare.addEventListener('mouseenter', colorOnHover);
             }
         }
     
-        // return(squareArray);
     }
     
-    //Logic for square size
     function determineSquareSize(numOfSquares){
         let size = (600/numOfSquares);
         return(size);
     }
     
-    // Logic for determining color in eventListeners
     function colorOnHover(e){
         e.currentTarget.classList.add('scratched');
     }
