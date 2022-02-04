@@ -24,7 +24,7 @@ function mainGame(){
     //Change
     function clearGame(){
         let squareNodeList = document.querySelectorAll('.colorSquare');
-        squareNodeList.forEach(square => square.classList.remove('scratched'));
+        squareNodeList.forEach(square => square.style.backgroundColor = 'rgb(0, 0, 0, 0)');
     }
 
     function removeSquares(){
