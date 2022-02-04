@@ -44,6 +44,7 @@ body {
     background-color: rgb(211, 176, 130);
     flex-wrap: wrap;
     justify-content: space-evenly;
+    flex-shrink: 0;
 }
 
 .colorSquare {
