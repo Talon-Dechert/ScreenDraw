@@ -7,6 +7,4 @@ Round 2
 -------------------------
 
 
--Set the color on each pass to random RGB value
-
--Each successive pass adds 10% towards black
+-Each successive pass adds 10% towards black --- this one requires some significant restructuring of JS. May be back later to work on this.
