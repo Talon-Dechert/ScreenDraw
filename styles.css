@@ -41,13 +41,13 @@ body {
     width: 600px;
     height: 600px;
     display: flex;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-    flex-grow: 0;
     background-color: rgb(211, 176, 130);
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .colorSquare {
+    flex: 1 1 auto;
     border: 1px solid black;
     margin: 0px;
     padding: 0px;

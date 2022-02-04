@@ -13,12 +13,15 @@ function mainGame(){
 
     
     function newGame(){
+        let squareAmount = promptForNewSquares();
         clearGame();
         removeSquares();
-        generateSquares(promptForNewSquares());
+        generateSquares(squareAmount);
         
     }
     
+
+    //Change
     function clearGame(){
         let squareNodeList = document.querySelectorAll('.colorSquare');
         squareNodeList.forEach(square => square.classList.remove('scratched'));
@@ -71,12 +74,19 @@ function mainGame(){
         let size = (600/numOfSquares);
         return(size);
     }
-    
+
+
     function colorOnHover(e){
-        e.currentTarget.classList.add('scratched');
+        e.currentTarget.style.backgroundColor =`rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
     }
 
+    function randomColor(){
+        let ranColor = Math.floor(Math.random() * 256);
+        
+        return(ranColor);
+    }
 
 }
 
 mainGame();
+
